@@ -17,7 +17,7 @@ import com.sportan.drinktracker.databinding.FragmentDrinksListBinding
 class DrinkFragment : Fragment() {
 
     private lateinit var binding: FragmentDrinkBinding
-    private val viewModel: DrinkViewModel by viewModels{
+    private val viewModel: DrinkViewModel by viewModels {
         DrinkViewModel.factory
     }
 
@@ -34,9 +34,11 @@ class DrinkFragment : Fragment() {
         // Inflate the layout for this fragment
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_drink, container, false)
 
+        //Se reciben los argumentos de el bundle para poder poner en display las cosas
         val drinkName = arguments?.getString("drinkName")
         val ingredients = arguments?.getString("ingredients")
 
+        //Se ponen los valores en el textview
         binding.drinkNameTextView.text = drinkName
         binding.ingredientsTextView.text = ingredients
 
@@ -53,13 +55,15 @@ class DrinkFragment : Fragment() {
             }
         }
 
-        requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner,
+        requireActivity().onBackPressedDispatcher.addCallback(
+            viewLifecycleOwner,
             onBackPressedCallback as OnBackPressedCallback
         )
 
     }
 
     override fun onDestroyView() {
+        //Se destruye la vista y se remueve la opcion de volver atras
         super.onDestroyView()
         onBackPressedCallback?.remove()
         onBackPressedCallback = null

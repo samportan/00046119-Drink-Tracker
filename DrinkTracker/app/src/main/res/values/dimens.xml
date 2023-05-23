@@ -3,4 +3,5 @@
     <dimen name="title_top_margin">24dp</dimen>
     <dimen name="title_text_size">32sp</dimen>
     <dimen name="medium_gap">16dp</dimen>
+    <dimen name="title_drink_size">16sp</dimen>
 </resources>

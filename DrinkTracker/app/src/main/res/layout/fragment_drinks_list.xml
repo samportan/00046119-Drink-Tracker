@@ -16,9 +16,9 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/title_top_margin"
             android:text="DRINK TRACKER"
+            android:textColor="@color/title_text_color"
             android:textSize="@dimen/title_text_size"
             android:textStyle="bold"
-            android:textColor="@color/title_text_color"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
@@ -29,14 +29,14 @@
             android:layout_width="409dp"
             android:layout_height="662dp"
             android:layout_marginTop="@dimen/medium_gap"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView"
-            tools:listitem="@layout/item_view"
-            app:layout_constraintVertical_bias="1.0" />
+            app:layout_constraintVertical_bias="1.0"
+            tools:listitem="@layout/item_view" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/floatingActionButton"

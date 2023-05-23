@@ -15,7 +15,7 @@ import com.sportan.drinktracker.databinding.FragmentDrinksListBinding
 class DrinksListFragment : Fragment() {
 
     private lateinit var binding: FragmentDrinksListBinding
-    private val viewModel: DrinkViewModel by viewModels{
+    private val viewModel: DrinkViewModel by viewModels {
         DrinkViewModel.factory
     }
 
@@ -38,11 +38,13 @@ class DrinksListFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val adapter = DrinkAdapter{
+        val adapter = DrinkAdapter {
+            //Se crea un bundle para mandar los datos a la vista de la bebida
             val bundle = Bundle().apply {
                 putString("drinkName", it.name)
                 putString("ingredients", it.ingredients)
             }
+            //Se navega al fragmento de la bebida
             findNavController().navigate(R.id.action_drinksListFragment_to_drinkFragment, bundle)
         }
         adapter.submitData(viewModel.getDrinks())
